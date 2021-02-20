@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</head>
+<br>
+<br>
+
+<div class = "container">
+<h1 align="center">Productos - Editar</h1>
+<br>
+<br>
+<%= form_with scope: @dato, url: productos_actualizar_path, method: :PUT do |f| %>    
+    <%= f.hidden_field  :id%>   
+    <p>
+ <label>Nombre</label> <br>
+ <%= f.text_field :nombre, class: "form-control"%>
+ </p>
+ <p>
+ <label>Cantidad Minima</label> <br>
+ <%= f.number_field :cant_min, class: "form-control" %>
+ </p>
+ <p>
+ <label>Cantidad actual</label> <br>
+ <%= f.number_field :cant_act, class: "form-control" %>
+ </p>
+ <p>
+ <label>Precio</label> <br>
+ <%= f.number_field :precio, class: "form-control" %>
+ </p>
+ <p>
+ <label>Activo</label> <br>
+ <%= f.check_box :activo %>
+ </p>
+ <p>
+ <label>Marca</label> <br>
+ <%= f.collection_select(:marca_id, @marca.all, :id, :nombre, class: "dropdown-menu") %>
+ </p>
+ <p>
+ <label>Rubro</label> <br>
+ <%= f.collection_select(:rubro_id, @rubro.all, :id, :nombre, class: "dropdown-menu") %>
+ </p>
+ <%= f.submit "Enviar", disable_with: 'Submiting...' , class: "btn btn-primary" %>
+<% end %>
+<br>
+<br>
+</div>
