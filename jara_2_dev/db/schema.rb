@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_191908) do
     t.string "nombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["nombre"], name: "index_marcas_on_nombre", unique: true
   end
 
   create_table "productos", force: :cascade do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_191908) do
     t.boolean "perecedero"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["nombre"], name: "index_rubros_on_nombre", unique: true
   end
 
   create_table "users", force: :cascade do |t|

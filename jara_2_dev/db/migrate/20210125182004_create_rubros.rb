@@ -5,5 +5,6 @@ class CreateRubros < ActiveRecord::Migration[6.0]
       t.boolean :perecedero
       t.timestamps
     end
+    add_index :rubros, :nombre, unique: true
   end
 end

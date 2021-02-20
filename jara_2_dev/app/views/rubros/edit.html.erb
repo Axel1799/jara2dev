@@ -33,7 +33,8 @@
 <br>
 <br>
 <%= form_with scope: @dato, url: rubros_actualizar_path, method: :PUT do |f| %>    
-    <%= f.hidden_field  :id%>   
+    <%= f.hidden_field  :id%> 
+    <p>Si el nombre ingresado no es enviado, es porque ya existe uno con el mismo nombre</p>  
  <p>
  <label>Nombre</label> <br>
  <%= f.text_field :nombre, class: "form-control"%>

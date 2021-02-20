@@ -4,5 +4,6 @@ class CreateMarcas < ActiveRecord::Migration[6.0]
       t.string :nombre      
       t.timestamps
     end
+    add_index :marcas, :nombre, unique: true
   end
 end

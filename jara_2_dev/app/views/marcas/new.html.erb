@@ -33,6 +33,7 @@
 <h1 align="center">Marcas - Nuevo</h1>
 
  <%= form_with scope: @dato, url: marcas_crear_path do |f| %>
+    <p>Si el nombre ingresado no es enviado, es porque ya existe uno con el mismo nombre</p>
     <p>
     <label>Marca</label> <br>
     <%= f.text_field :nombre, class: "form-control"%>
