@@ -59,8 +59,8 @@
         <td><%= dato.cant_act %></td>
         <td><%= dato.precio %></td>
         <td><%= dato.activo%></td>
-        <td><%= dato.marca_id %></td>
-        <td><%= dato.rubro_id %></td>
+        <td><%= dato.marca.nombre %></td>
+        <td><%= dato.rubro.nombre %></td>
         <% if user_signed_in? %>
         <td><%= link_to 'Editar', productos_editar_path(dato.id), class: "btn btn-warning" %></td>
         <td><%= link_to 'Borrar', productos_borrar_path(dato.id), class: "btn btn-danger", method: :delete %></td>
