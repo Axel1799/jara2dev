@@ -51,7 +51,14 @@
       <% @datos.each do |dato|%>
         <td><%= dato.id %></td>
         <td><%= dato.nombre %></td>
-        <td><%= dato.perecedero %></td>
+        <td><% if dato.perecedero == true %>
+        <span class = "badge badge-pill badge-danger">SI</span>
+        <%end%>
+        <% if dato.perecedero == false %>
+        <span class = "badge badge-pill badge-success">NO</span>
+        <%end%>
+        </td>
+        
         <% if user_signed_in? %>      
         <td><%= link_to 'Editar', rubros_editar_path(dato.id), class: "btn btn-warning" %></td>
         <td><%= link_to 'Borrar', rubros_borrar_path(dato.id), class: "btn btn-danger", method: :delete %></td>

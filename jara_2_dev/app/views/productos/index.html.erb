@@ -58,7 +58,13 @@
         <td><%= dato.cant_min %></td>
         <td><%= dato.cant_act %></td>
         <td><%= dato.precio %></td>
-        <td><%= dato.activo%></td>
+        <td><% if dato.activo == true %>
+        <span class = "badge badge-pill badge-success">SI</span>
+        <%end%>
+        <% if dato.activo == false %>
+        <span class = "badge badge-pill badge-danger">NO</span>
+        <%end%>
+        </td>
         <td><%= dato.marca.nombre %></td>
         <td><%= dato.rubro.nombre %></td>
         <% if user_signed_in? %>
